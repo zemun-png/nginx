@@ -14,7 +14,7 @@ pipeline {
             }
         }
 
-        stage('Create container '){
+        stage('Create container On Dev Envornment ...'){
             steps {
                 sh "docker-compose up -d"
             }
