@@ -19,8 +19,8 @@ pipeline {
                 sh "docker-compose up -d"
             }
         }
-        stage('Create container On Stage ...'){
-            node('slave')
+        stage('Create container On Stage ...')
+            node('slave'){
             steps {
                 sh "echo Hi"
             }
