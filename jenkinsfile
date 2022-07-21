@@ -14,6 +14,7 @@ pipeline {
 
         stage('Create container '){
             steps {
+                sh "docker rm my_nginx -f"
                 sh "docker-compose up -d"
             }
         }
