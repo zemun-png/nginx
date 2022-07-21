@@ -19,7 +19,7 @@ pipeline {
                 sh "docker-compose up -d"
             }
         }
-        stage('Create container On Dev Envornment ...'){
+        stage('Create container On Stage ...'){
             steps {
                 sh "ssh root@10.10.10.140"
                 sh 'docker rm my_nginx -f'
