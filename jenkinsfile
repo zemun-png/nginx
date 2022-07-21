@@ -1,0 +1,22 @@
+pipeline {
+    agent any
+    stages {
+        stage('Build Images') {
+            steps {
+                sh 'docker build -t mynginx:latest .'
+            }
+            post {
+                success {
+                    echo "images build successfull ..."
+                }
+            }
+        }
+
+        stage('Create container '){
+            steps {
+                sh "docker-compose up -d"
+            }
+        }
+
+    }
+}
