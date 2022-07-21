@@ -1,0 +1,17 @@
+version: '3.4'
+
+services:
+  stage.ara.smsprovider.webui:
+    image: mynginx
+    network_mode: "bridge"
+    restart: always
+    container_name: my_nginx
+    build:
+      network: host
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - /var/logs:/Log
+    #  - /app/app.proxy.Web.Host/bin/Release/net5.0/wwwroot:/var/docker_volumes/app.proxy/wwwroot
+    ports:
+      - 8888:80
