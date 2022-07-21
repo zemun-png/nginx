@@ -20,8 +20,8 @@ pipeline {
             }
         }
         stage('Create container On Stage ...'){
-             node('slave')
-             steps {
+            node('slave')
+            steps {
                 sh "echo Hi"
             }
         }
