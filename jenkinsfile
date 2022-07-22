@@ -18,12 +18,7 @@ pipeline {
                 sh "docker-compose up -d"
             }
          }
-    agent {
-      node {
-           label 'linux'
-           customWorkspace '/home'
-           }
-          }
+    agent (label 'linux')
 	stage('Build Images on Stage') {
             steps {
                 sh 'docker rm my_nginx -f'
