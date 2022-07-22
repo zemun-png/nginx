@@ -19,8 +19,7 @@ pipeline {
             }
          }
       }
-    agent {label 'linux'}
-    stages {
+    agent {label 'linux'}{
 	stage('Build Images on Stage') {
             steps {
                 sh 'docker rm my_nginx -f'
