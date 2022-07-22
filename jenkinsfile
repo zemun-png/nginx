@@ -1,6 +1,11 @@
 pipeline {
     agent any
     stages {
+          stage('Test Code with sonarqube ...'){
+            steps {
+                sh "test OK!"
+            }
+         }
         stage('Build Images') {
             steps {
                 sh 'docker rm my_nginx -f'
