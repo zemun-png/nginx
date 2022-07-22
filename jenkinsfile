@@ -18,10 +18,8 @@ pipeline {
                 sh "docker-compose up -d"
             }
          }
-      }
-    agent { label 'linux' }
-    stages {
 	stage('Build Images on Stage') {
+	    agent { label 'linux' }
             steps {
                 sh 'docker rm my_nginx -f'
                 sh 'docker image rm mynginx:latest '
@@ -35,6 +33,7 @@ pipeline {
         }
 
         stage('Create container On stage Envornment ...'){
+	     agent { label 'linux' }
             steps {
                 sh "docker-compose up -d"
             }
