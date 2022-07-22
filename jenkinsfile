@@ -21,6 +21,9 @@ pipeline {
 	stage('Build Images on Stage') {
 	    agent { label 'linux' }
             steps {
+	        timeout(time:5, unit:'DAYS'){
+                    input message:'Approve PRODUCTION Deployment?'
+                }
                 sh 'docker rm my_nginx -f'
                 sh 'docker image rm mynginx:latest '
                 sh 'docker build -t mynginx:latest .'
