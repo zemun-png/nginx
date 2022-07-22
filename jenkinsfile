@@ -20,7 +20,7 @@ pipeline {
          }
 	stage('Image push to Repository'){
             steps {
-                sh "Image Push to Repository"
+                sh " echo 'Image Push to Repository'"
             }
          }
 	stage('Build Images on Stage') {
@@ -52,7 +52,7 @@ pipeline {
 	        timeout(time:5, unit:'DAYS'){
                     input message:'Approve PRODUCTION Deployment?'
                 }
-                sh "Echo Conatiner created on Product server"
+                sh "echo 'Conatiner created on Product server'"
             }
          }
     }
