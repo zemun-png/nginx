@@ -18,7 +18,6 @@ pipeline {
                 sh "docker-compose up -d"
             }
          }
-      }
     agent {
       node {
            label 'linux'
